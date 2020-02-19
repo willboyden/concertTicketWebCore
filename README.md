@@ -16,7 +16,7 @@ D3.js(Low Level General Data Visualization)
 , React-Pivottable(Exploratory Data Analysis)
 , Full-Calendar(Plotting of TimeSeries Event Data)
 
-![Image description](picturesOfWebsite/venueMaps2020_02_18)
+![Image description](picturesOfWebsite/venueMaps2020_02_18.png)
 
 Please note that this is a work in progress as such
   -styling will be fine tuned once everything else is in order
