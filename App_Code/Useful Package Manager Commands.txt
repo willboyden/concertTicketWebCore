@@ -1,0 +1,1 @@
+﻿Scaffold -DbContext "Server=(localdb)\\MSSQLLocalDB;Database=stubhubApi;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -t User, Role -f

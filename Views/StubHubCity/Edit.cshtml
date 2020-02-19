@@ -1,0 +1,89 @@
+﻿@model concertTicketWebCoreMVC.Models.StubHubCity
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>StubHubCity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Index" />
+            <div class="form-group">
+                <label asp-for="GeoNameId" class="control-label"></label>
+                <input asp-for="GeoNameId" class="form-control" />
+                <span asp-validation-for="GeoNameId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="city" class="control-label"></label>
+                <input asp-for="city" class="form-control" />
+                <span asp-validation-for="city" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StateCode" class="control-label"></label>
+                <input asp-for="StateCode" class="form-control" />
+                <span asp-validation-for="StateCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryCode" class="control-label"></label>
+                <input asp-for="CountryCode" class="form-control" />
+                <span asp-validation-for="CountryCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Latitude" class="control-label"></label>
+                <input asp-for="Latitude" class="form-control" />
+                <span asp-validation-for="Latitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Longitude" class="control-label"></label>
+                <input asp-for="Longitude" class="form-control" />
+                <span asp-validation-for="Longitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Score" class="control-label"></label>
+                <input asp-for="Score" class="form-control" />
+                <span asp-validation-for="Score" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeZoneId" class="control-label"></label>
+                <input asp-for="TimeZoneId" class="form-control" />
+                <span asp-validation-for="TimeZoneId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeZoneRawOffset" class="control-label"></label>
+                <input asp-for="TimeZoneRawOffset" class="form-control" />
+                <span asp-validation-for="TimeZoneRawOffset" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeZoneDisplayOffset" class="control-label"></label>
+                <input asp-for="TimeZoneDisplayOffset" class="form-control" />
+                <span asp-validation-for="TimeZoneDisplayOffset" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
