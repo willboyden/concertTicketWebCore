@@ -1,5 +1,4 @@
 import React from 'react';
-import tips from './tips';
 import cities from './cities';
 import {sortAs} from '../src/Utilities';
 import TableRenderers from '../src/TableRenderers';
@@ -38,10 +37,10 @@ class PivotTableUISmartWrapper extends React.PureComponent {
 
 export default class App extends React.Component {
   componentWillMount() {
-    console.log(tips);
     this.setState({
       mode: 'demo',
       filename: 'Sample Dataset: Tips',
+      // textarea: 'Sample Dataset: Tips',
       pivotState: {
         data: cities,
         // rows: ['Payer Gender'],
@@ -68,30 +67,9 @@ export default class App extends React.Component {
     });
   }
 
-  onDrop(files) {
-    this.setState(
-      {
-        mode: 'thinking',
-        filename: '(Parsing CSV...)',
-        textarea: '',
-        pivotState: {data: []},
-      },
-      () =>
-        Papa.parse(files[0], {
-          skipEmptyLines: true,
-          error: e => alert(e),
-          complete: parsed =>
-            this.setState({
-              mode: 'file',
-              filename: files[0].name,
-              pivotState: {data: parsed.data},
-            }),
-        })
-    );
-  }
-
-  onSearch(apiUrl) {
-    // console.log({data});
+  onClicked(textAreaValue) {
+    // console.log(apiUrl.target.value);
+    let apiUrl = textAreaValue.target.value;
     this.setState(
       {
         mode: 'thinking',
@@ -114,6 +92,12 @@ export default class App extends React.Component {
     );
   }
 
+  onTextChange(textAreaValue) {
+    this.setState({
+      textarea: textAreaValue.target.value,
+    });
+  }
+
   render() {
     return (
       <div>
@@ -122,9 +106,16 @@ export default class App extends React.Component {
             <p>...or paste some data:</p>
             <textarea
               value={this.state.textarea}
-              onChange={this.onSearch.bind(this)}
-              placeholder="Paste from apIurl"
+              onChange={this.onTextChange.bind(this)}
+              // placeholder="Paste from apIurl ex -> https://localhost:44350/api/testapi/GetCityVenues"
             />
+
+            <button
+              value={this.state.textarea}
+              onClick={this.onClicked.bind(this)}
+            >
+              Search Api
+            </button>
           </div>
         </div>
         <div className="row text-center">
