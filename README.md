@@ -9,7 +9,7 @@ to examine price fluxutation.
 
 This ASP.NET Core 3.1 website utilizes various tools including but not limited to 
 D3.js(Low Level General Data Visualization)
-, React(Mopre responsive UI/UX)
+, React(More responsive UI/UX)
 , Leaflet(Visualizing Geo-Data)
 , Plotly(General High Level Data Visualization)
 , React-Pivottable(Exploratory Data Analysis)
